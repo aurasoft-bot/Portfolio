@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prajakta Hebbar, writer and editor</title>
+<meta name="description" content="Prajakta Hebbar is a writer, editor and content lead with 16+ years across newsrooms, tech media and brand content. Currently building something new.">
+<link rel="canonical" href="https://prajaktahebbar.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Prajakta Hebbar, writer and editor">
+<meta property="og:description" content="Sixteen-plus years of making complicated things easy to read. Now building something new.">
+<meta property="og:url" content="https://prajaktahebbar.com/">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Chakra+Petch:wght@400;600;700&display=swap">
+<style>
+
+/* Layout: a 90s portal. Logo band, nav bar, TV hero, poster row, tiles, then the career as a TV guide. */
+:root{
+  color-scheme:dark;
+  --bg:#0E0723; --panel:#170E38; --bar:#2A1A78; --pink:#FF3EA5; --cyan:#2BE6FF; --yellow:#FFE74A;
+  --green:#4DF58F; --orange:#FF8A2B; --text:#F4F0FF; --muted:#C4B9EC; --black:#000000;
+  --display:"Bungee","Impact","Arial Black",sans-serif;
+  --body:"Chakra Petch","Trebuchet MS",system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:1rem}
+body{margin:0;background-color:var(--bg);background-image:radial-gradient(rgba(255,62,165,.18) 1px,transparent 1.6px);
+  background-size:22px 22px;color:var(--text);font:400 1.0625rem/1.55 var(--body)}
+h1,h2,h3,p,ul{margin:0}
+ul{padding:0;list-style:none}
+p{max-width:65ch}
+a{color:var(--cyan);text-decoration-thickness:.12em;text-underline-offset:.18em}
+a:not([class]):hover{background:var(--yellow);color:var(--black)}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+.skip{position:absolute;left:1rem;top:-5rem;z-index:20;padding:.7rem 1rem;background:var(--yellow);color:var(--black);font-weight:700}
+.skip:focus{top:1rem}
+.wrap{max-width:76rem;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+section.wrap{padding-block:clamp(1.5rem,4vw,2.5rem)}
+
+/* masthead */
+.masthead{border-bottom:3px solid var(--cyan);background:linear-gradient(180deg,#1E1250,var(--bg))}
+.mast{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem 2rem;padding-block:1rem}
+.logo{display:flex;flex-direction:column;align-items:flex-start;gap:.45rem;min-width:0}
+.logo-mark{font:400 clamp(1.75rem,5.4vw,3rem)/1.05 var(--display);color:var(--yellow);text-decoration:none;
+  text-shadow:2px 2px 0 var(--pink),4px 4px 0 var(--bar)}
+.logo-mark:hover{color:var(--text)}
+.tag{color:var(--green);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.95rem}
+.welcome{border:2px solid var(--green);padding:.55rem .9rem;background:rgba(0,0,0,.35)}
+.welcome p{font-weight:700;color:var(--green)}
+.welcome .wl{display:flex;flex-wrap:wrap;gap:.2rem 1rem;font-size:.95rem}
+.nav{background:var(--bar);border-bottom:3px solid var(--pink)}
+.nav ul{display:flex;gap:.25rem 1.4rem;overflow-x:auto}
+.nav a{display:inline-flex;align-items:center;min-height:2.75rem;white-space:nowrap;color:var(--text);font-weight:700;letter-spacing:.04em;text-decoration:none;text-transform:uppercase;font-size:.9rem}
+.nav a:hover{color:var(--yellow)}
+
+/* section heads */
+.sec-head{display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem}
+.sec-head h2{font:400 clamp(1.3rem,3vw,1.9rem)/1.1 var(--display);color:var(--cyan);text-wrap:balance}
+.sec-head::after{content:"";flex:1 1 2rem;height:.6rem;background:repeating-linear-gradient(135deg,var(--yellow) 0 3px,transparent 3px 8px)}
+
+/* hero */
+.hero{display:grid;gap:2rem;grid-template-columns:minmax(0,1fr);align-items:center}
+@media (min-width:56em){.hero{grid-template-columns:minmax(0,5fr) minmax(0,6fr)}}
+.panel{background:var(--panel);border:3px solid var(--cyan);padding:clamp(1.1rem,3vw,1.75rem);box-shadow:6px 6px 0 var(--pink)}
+.panel > * + *{margin-top:1rem}
+h1{font:400 clamp(1.7rem,3.8vw,2.7rem)/1.08 var(--display);color:var(--text);overflow-wrap:anywhere}
+.lede{color:var(--muted)}
+.arrows li{display:flex;gap:.7rem;align-items:flex-start;padding-block:.2rem}
+.arrows li::before{content:"";flex:none;margin-top:.45rem;border-left:.8rem solid var(--c,var(--pink));border-block:.4rem solid transparent}
+.arrows li:nth-child(2){--c:var(--cyan)}.arrows li:nth-child(3){--c:var(--yellow)}
+.arrows li:nth-child(4){--c:var(--green)}.arrows li:nth-child(5){--c:var(--orange)}
+.actions{display:flex;flex-wrap:wrap;gap:.9rem 1.1rem}
+.btn{display:inline-flex;align-items:center;min-height:2.75rem;padding:.5rem 1.1rem;border:3px solid var(--green);color:var(--green);
+  background:transparent;font:700 1rem/1.1 var(--body);letter-spacing:.03em;text-decoration:none;text-transform:uppercase}
+.btn:hover{background:var(--green);color:var(--black)}
+.btn--pink{border-color:var(--pink);color:var(--pink)}.btn--pink:hover{background:var(--pink);color:var(--black)}
+.btn--cyan{border-color:var(--cyan);color:var(--cyan)}.btn--cyan:hover{background:var(--cyan);color:var(--black)}
+.btn--yellow{border-color:var(--yellow);color:var(--yellow)}.btn--yellow:hover{background:var(--yellow);color:var(--black)}
+.sel{user-select:all;font-weight:700}
+.small{font-size:.95rem}
+
+.tv{background:linear-gradient(#444452,#23232C);border:4px solid #07070D;border-radius:2rem;padding:clamp(.8rem,2vw,1.3rem);
+  box-shadow:0 0 0 3px var(--pink),9px 9px 0 3px var(--cyan)}
+.screen{position:relative;overflow:hidden;display:grid;place-content:center;justify-items:center;gap:.9rem;aspect-ratio:4/3;
+  padding:1rem;border-radius:1.6rem/1.2rem;background-color:#2447C8;
+  background-image:radial-gradient(rgba(255,255,255,.28) 1px,transparent 1.3px),radial-gradient(rgba(0,0,0,.35) 1px,transparent 1.3px);
+  background-size:3px 3px,5px 5px;text-align:center}
+.screen::after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(rgba(0,0,0,.2) 0 1px,transparent 1px 3px)}
+.now{display:flex;flex-direction:column;align-items:center;gap:.2rem;font:400 clamp(1.6rem,5vw,3.2rem)/1 var(--display);transform:rotate(-3deg)}
+.now span{padding:.08em .35em;color:var(--black)}
+.now span:first-child{background:var(--yellow);font-size:.7em;align-self:flex-start}
+.now span:last-child{background:var(--pink)}
+.show{max-width:20rem;background:var(--black);color:var(--green);border:2px solid var(--green);padding:.5rem .9rem;font-weight:600}
+.show strong{display:block;font-size:1.1rem}
+.tapes{display:grid;gap:.3rem;margin:1.1rem auto 0;width:min(100%,19rem)}
+.tape{background:#0B0B12;border:2px solid #4A4A5C;border-radius:3px;padding:.3rem .5rem}
+.tape span{display:block;background:#F4F0FF;color:var(--black);padding:.1rem .5rem;font-weight:700;font-size:.85rem}
+.tape:nth-child(2){margin-left:.8rem}.tape:nth-child(3){margin-left:.3rem}.tape:nth-child(4){margin-left:1.1rem}
+
+/* posters (writing and awards) */
+.clips{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:1rem}
+.clip{--a:#FF3EA5;--b:#FFA6D3;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:.5rem;padding:1rem;color:var(--black);
+  border:3px solid var(--text);background:linear-gradient(160deg,var(--a),var(--b));min-width:0}
+.clip::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(0,0,0,.14) 1px,transparent 1.4px);background-size:6px 6px}
+.clip > *{position:relative;z-index:1}
+.clip:nth-child(2){--a:#2BE6FF;--b:#A5F3FF}.clip:nth-child(3){--a:#FFE74A;--b:#FFC27A}
+.clip:nth-child(4){--a:#4DF58F;--b:#B8FFD3}.clip:nth-child(5){--a:#FF8A2B;--b:#FFD0A0}
+.clip-meta{display:flex;flex-direction:column;gap:.15rem}
+.clip-outlet{font:400 1.2rem/1.05 var(--display);overflow-wrap:anywhere}
+.clip-when{font-weight:700;font-size:.9rem}
+.clip h3{font:700 1.05rem/1.25 var(--body)}
+.clip p{font-size:.95rem}
+.clip a{color:var(--black);font-weight:700}
+.clip a:hover{background:var(--black);color:var(--yellow)}
+
+/* category tiles */
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));gap:.9rem}
+.cat{padding:1rem;color:var(--black);border:3px solid var(--text);background:var(--c,var(--pink))}
+.cat:nth-child(2){--c:var(--cyan)}.cat:nth-child(3){--c:var(--yellow)}.cat:nth-child(4){--c:var(--green)}
+.cat:nth-child(5){--c:var(--orange)}.cat:nth-child(6){--c:#C8A6FF}
+.cat h3{font:400 1.15rem/1.1 var(--display);margin-bottom:.5rem}
+.cat li{font-weight:600;padding-block:.15rem}
+
+/* the career, as a TV guide */
+.live{display:grid;gap:1.5rem;grid-template-columns:minmax(0,1fr);align-items:start}
+@media (min-width:60em){.live{grid-template-columns:minmax(0,2fr) minmax(0,1fr)}}
+.guide{background:var(--panel);border:3px solid var(--pink);padding:.5rem 1.1rem}
+.job{display:grid;gap:.25rem 1.25rem;padding-block:1rem;border-top:2px solid var(--bar)}
+.job:first-child{border-top:0}
+@media (min-width:40em){.job{grid-template-columns:9.5rem minmax(0,1fr)}}
+.job-when span{display:block}
+.job-when span:first-child{color:var(--muted);font-size:.9rem}
+.job-when span:last-child{color:var(--cyan);font-weight:700}
+.job-what{display:flex;flex-direction:column}
+.job-org{order:-1;color:var(--yellow);font:400 1rem/1.2 var(--display);margin-bottom:.2rem}
+.job h3{font:700 1.1rem/1.25 var(--body)}
+.job-what p + p,.job h3 + p + p{margin-top:.35rem;color:var(--muted)}
+.break{background:var(--black);border:3px solid var(--pink);padding:1.1rem;transform:rotate(1deg)}
+.break > * + *{margin-top:.8rem}
+.break h3{font:400 1.3rem/1.1 var(--display);color:var(--pink)}
+
+/* about me */
+.about{display:grid;gap:1.25rem;grid-template-columns:minmax(0,1fr);align-items:start}
+@media (min-width:56em){.about{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.about-lead{font-size:clamp(1.1rem,1.6vw,1.25rem);font-weight:600}
+.about-short .lead-in{font:400 1rem/1.35 var(--display);color:var(--yellow)}
+.news{border:3px solid var(--yellow);background:var(--black);padding:1rem 1.1rem}
+.news > * + *{margin-top:.6rem}
+.news h3{font:400 1.25rem/1.1 var(--display);color:var(--yellow)}
+
+/* how I work: five numbered cards */
+.points{counter-reset:p;display:grid;gap:1.1rem;grid-template-columns:minmax(0,1fr)}
+@media (min-width:40em){.points{grid-template-columns:repeat(2,minmax(0,1fr))}.point:last-child{grid-column:1/-1}}
+@media (min-width:64em){.points{grid-template-columns:repeat(6,minmax(0,1fr))}.point{grid-column:span 2}.point:nth-child(n+4){grid-column:span 3}}
+.point{--c:var(--pink);counter-increment:p;background:var(--panel);border:3px solid var(--c);box-shadow:5px 5px 0 var(--c);padding:1rem 1.1rem 1.15rem}
+.point:nth-child(2){--c:var(--cyan)}.point:nth-child(3){--c:var(--yellow)}.point:nth-child(4){--c:var(--green)}.point:nth-child(5){--c:var(--orange)}
+.point::before{content:counter(p,decimal-leading-zero);content:counter(p,decimal-leading-zero) / "";display:block;font:400 2.4rem/1 var(--display);color:var(--c);margin-bottom:.45rem}
+.point h3{font:400 1.15rem/1.2 var(--display);color:var(--text);margin-bottom:.45rem}
+.point p{color:var(--muted)}
+
+/* on demand, network */
+.certs{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr))}
+.cert-group{background:var(--panel);border:3px solid var(--cyan);padding:1rem 1.1rem}
+.cert-group h3{font:400 1.1rem/1.1 var(--display);color:var(--cyan);margin-bottom:.6rem}
+.cert-group li{padding-block:.3rem;border-top:1px solid var(--bar)}
+.cert-group li:first-child{border-top:0}
+.edus{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr))}
+.edu{background:var(--panel);border:3px solid var(--green);padding:1rem 1.1rem}
+.edu-when{font:400 1rem/1.2 var(--display);color:var(--green);margin-bottom:.4rem}
+.edu h3{font:700 1.1rem/1.25 var(--body)}
+.edu-org{color:var(--yellow);font-weight:700}
+
+/* footer */
+.foot{margin-top:1.5rem;border-top:3px solid var(--cyan);background:linear-gradient(0deg,#1E1250,var(--bg))}
+.foot .wrap{padding-block:clamp(1.75rem,4vw,2.75rem) 2rem;display:grid;gap:1.1rem}
+.foot h2{font:400 clamp(1.5rem,4vw,2.4rem)/1.1 var(--display);color:var(--yellow);text-shadow:3px 3px 0 var(--pink)}
+.mailbig{font:400 clamp(1.15rem,3.6vw,2.2rem)/1.15 var(--display);color:var(--green);overflow-wrap:anywhere;max-width:none}
+.onair{font-size:.95rem;color:var(--muted)}
+
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Prajakta Hebbar",
+  "url": "https://prajaktahebbar.com/",
+  "jobTitle": "Writer, editor and content lead",
+  "email": "mailto:mail.praj@gmail.com",
+  "sameAs": ["https://www.linkedin.com/in/prajakta-hebbar/", "https://www.instagram.com/imsopraj/", "https://bibliospective.substack.com/"]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead"><div class="wrap mast">
+  <div class="logo"><a class="logo-mark" href="#top">Prajakta Hebbar</a><p class="tag">16+ years of content</p></div>
+  <div class="welcome"><p>Welcome</p><p class="wl"><a href="mailto:mail.praj@gmail.com">Email me</a><a href="https://www.linkedin.com/in/prajakta-hebbar/">LinkedIn</a><a href="https://www.instagram.com/imsopraj/">Instagram</a><a href="https://bibliospective.substack.com/">Substack</a></p></div>
+</div></header>
+<nav class="nav" aria-label="Sections"><div class="wrap"><ul role="list">
+  <li><a href="#top">Home</a></li><li><a href="#about">About</a></li><li><a href="#featured">Featured</a></li>
+  <li><a href="#experience">Experience</a></li><li><a href="#how">How I work</a></li><li><a href="#learning">Learning</a></li>
+  <li><a href="#contact">Contact</a></li>
+</ul></div></nav>
+
+<main id="main">
+
+<section class="wrap hero" id="top" aria-labelledby="b-h1">
+  <div class="panel">
+    <p class="small">Writer, editor and content lead</p>
+    <h1 id="b-h1">I make complicated things easy to read.</h1>
+    <p class="lede">I’ve worked in national newsrooms, a media house covering data science and AI, a resort brand and a global enterprise. I handle content end to end: research, writing, editing and the calendar that gets it published.</p>
+    <ul class="arrows" role="list">
+      <li>16+ years in media, content and tech startups</li>
+      <li>End to end: research, writing, editing, calendar</li>
+      <li>Now building something new, in stealth</li>
+    </ul>
+    <div class="actions">
+      <a class="btn" href="mailto:mail.praj@gmail.com">Email me</a>
+      <a class="btn btn--cyan" href="https://www.linkedin.com/in/prajakta-hebbar/">LinkedIn</a>
+      <a class="btn btn--pink" href="https://www.instagram.com/imsopraj/">Instagram @imsopraj</a>
+      <a class="btn btn--yellow" href="https://bibliospective.substack.com/">Substack</a>
+    </div>
+    <p class="small">Email: <span class="sel">mail.praj@gmail.com</span></p>
+  </div>
+  <div>
+    <div class="tv"><div class="screen">
+      <p class="now"><span>Now</span><span>Playing</span></p>
+      <p class="show"><strong>Something new</strong>In stealth mode. Details soon.</p>
+    </div></div>
+    <div class="tapes"><div class="tape"><span>The Indian Express</span></div><div class="tape"><span>CNN-News18</span></div><div class="tape"><span>HuffPost India</span></div><div class="tape"><span>AIM</span></div></div>
+  </div>
+</section>
+
+<section class="wrap" id="about" aria-labelledby="b-about">
+  <div class="sec-head"><h2 id="b-about">About me</h2></div>
+  <div class="about">
+    <div class="panel">
+      <p class="about-lead">I am a highly skilled and multi-faceted professional with over 16 years of experience in media, content and tech startups.</p><p>My strength lies in handling end-to-end projects regarding content. Be it articles, PR pieces or whitepapers, I am well-versed in co-ordinating, researching and writing such elaborate pieces. I also enjoy working with writers &amp; editors and providing them with good quality articles that would bring huge traffic to any website.</p>
+      <aside class="news" aria-labelledby="b-news">
+        <h3 id="b-news">Bibliospective</h3>
+        <p>Opinions. Essays. Judgments. Reviews. Stories. Chaos.</p>
+        <div class="actions"><a class="btn btn--yellow" href="https://bibliospective.substack.com/">Read my Substack</a></div>
+      </aside>
+    </div>
+    <div class="panel about-short">
+      <p class="lead-in" id="b-short">In short, my work can be summarised as:</p>
+      <ul class="arrows" role="list" aria-labelledby="b-short"><li>Innovative and creative writer/editor with more than 16 years of experience in curating targeted content for noted &amp; global media platforms while ensuring accuracy, readability, and brand-consistent tonality</li><li>Well-versed in creating short-form content for social media platforms and comprehensive content for B2B purposes</li><li>Capable of creating unique/quality content through research and strong knowledge of concept development and creative ideations</li><li>Adept at presenting content/ideas in a clear, concise, and organized manner</li><li>A multi-platform editor, digitally aware, skilled with words, and endowed with the ability to work effectively under pressure, both in traditional media houses as well as start-up environments</li></ul>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="featured" aria-labelledby="b-feat">
+  <div class="sec-head"><h2 id="b-feat">Featured</h2></div>
+  <div class="clips"><article class="clip"><p class="clip-meta"><span class="clip-outlet">Express Institute</span><span class="clip-when">May 2011</span></p><h3>Dean’s Prize for Creativity &amp; Imagination</h3><p>Awarded by the Express Institute of Media Studies for creativity and writing during the 10-month journalism diploma.</p></article>
+<article class="clip"><p class="clip-meta"><span class="clip-outlet">Writefluence</span><span class="clip-when">September 2021</span></p><h3>“The Watcher” won the Writefluence Short Story Contest</h3><p>The story is published in the anthology <cite>A Lie On Her Lips: Sensuous Tales of a Clandestine Betrayal</cite>, available on Amazon.</p></article>
+<article class="clip"><p class="clip-meta"><span class="clip-outlet">CNN-News18</span><span class="clip-when">December 2014</span></p><h3>“Spot On!” award</h3><p>Awarded during my year as Senior Copy Editor.</p></article>
+<article class="clip"><p class="clip-meta"><span class="clip-outlet">Genpact</span><span class="clip-when">Nov–Dec 2024</span></p><h3>Four values-based recognitions</h3><p>Three in the Curious category, for innovation and for humility and inclusiveness, and one in Integrity.</p></article></div>
+</section>
+
+<section class="wrap" id="what-i-do" aria-labelledby="b-cat">
+  <div class="sec-head"><h2 id="b-cat">What I do</h2></div>
+  <div class="cats"><article class="cat"><h3>Features</h3><ul role="list"><li>Articles and features</li><li>Editing and copy editing</li></ul></article>
+<article class="cat"><h3>B2B and PR</h3><ul role="list"><li>Whitepapers and B2B content</li><li>PR pieces</li></ul></article>
+<article class="cat"><h3>Social</h3><ul role="list"><li>Short-form social content</li><li>Campaigns</li></ul></article>
+<article class="cat"><h3>Search and plan</h3><ul role="list"><li>SEO writing</li><li>Editorial calendars</li></ul></article>
+<article class="cat"><h3>Talent</h3><ul role="list"><li>Talent marketing and internal communications</li></ul></article>
+<article class="cat"><h3>AI</h3><ul role="list"><li>AI-assisted research and drafting</li></ul></article></div>
+</section>
+
+<section class="wrap" id="experience" aria-labelledby="b-live">
+  <div class="sec-head"><h2 id="b-live">Experience</h2></div>
+  <div class="live">
+    <div class="guide"><div class="jobs"><article class="job"><p class="job-when"><span>Hyderabad</span><span>Jun 2024 – May 2025</span></p><div class="job-what"><h3>Manager, Talent Marketing &amp; Communication</h3><p class="job-org">Genpact</p><p>Talent marketing and internal communications for a global enterprise. Earned four values-based recognitions from colleagues in Nov–Dec 2024 and completed the company’s generative AI and media-and-publishing learning tracks.</p></div></article>
+<article class="job"><p class="job-when"><span>Pune</span><span>Mar 2020 – Apr 2024</span></p><div class="job-what"><h3>Head of Content</h3><p class="job-org">Mantra Resort Pune</p><p>Led content for a resort brand for four years, across social media and campaigns.</p></div></article>
+<article class="job"><p class="job-when"><span>India, remote</span><span>2020 – 2022</span></p><div class="job-what"><h3>Independent consultant and freelance contributor</h3><p class="job-org">Parva, VICE Media, Spiceworks, WorkSera</p><p>Strategic communications and social media consulting for Parva. Features for VICE Media. Technology and web content for Spiceworks and WorkSera, with an SEO focus.</p></div></article>
+<article class="job"><p class="job-when"><span>Bengaluru</span><span>Jul 2017 – Feb 2020</span></p><div class="job-what"><h3>Growth Editor</h3><p class="job-org">AIM</p><p>Wrote and edited for a media house covering data science, AI and analytics, and worked on its growth through social media and campaigns. My author page there lists 691 articles.</p></div></article>
+<article class="job"><p class="job-when"><span>Bengaluru</span><span>Mar 2015 – Jun 2017</span></p><div class="job-what"><h3>News Producer</h3><p class="job-org">HuffPost India</p><p>Produced news for the Indian edition, running editorial calendars and social media.</p></div></article>
+<article class="job"><p class="job-when"><span>New Delhi</span><span>Mar 2014 – Mar 2015</span></p><div class="job-what"><h3>Senior Copy Editor</h3><p class="job-org">CNN-News18</p><p>Copy editing, film and tweet reviews, feature stories, and publishing to the website. Won the “Spot On!” award in December 2014.</p></div></article>
+<article class="job"><p class="job-when"><span>New Delhi</span><span>Jun 2011 – Mar 2014</span></p><div class="job-what"><h3>Correspondent, Features</h3><p class="job-org">The Indian Express</p><p>Features reporting for the national daily, with editing and online research.</p></div></article></div></div>
+    <aside class="break panel" aria-labelledby="b-break">
+      <h3 id="b-break">What’s next</h3>
+      <p>I’m building something of my own. It’s in stealth, so there’s no name, no pitch and no screenshot yet.</p>
+      <p>To hear first, email me with “tell me first” in the subject line.</p>
+      <div class="actions"><a class="btn btn--pink" href="mailto:mail.praj@gmail.com?subject=Tell%20me%20first">Email me to hear first</a></div>
+    </aside>
+  </div>
+</section>
+
+<section class="wrap" id="how" aria-labelledby="b-rules">
+  <div class="sec-head"><h2 id="b-rules">How I work</h2></div>
+  <div class="points"><div class="point"><h3>Right first. Then fast.</h3><p>Newsrooms taught me the order. A quick piece with one wrong fact does more harm than a slow piece that’s right, so I check before I file.</p></div>
+<div class="point"><h3>Plain beats clever.</h3><p>If you have to reread a sentence, it isn’t finished. I’d rather be understood than admired.</p></div>
+<div class="point"><h3>Reader first, format second.</h3><p>An article, a PR piece and a whitepaper do three different jobs for three different readers. I pick the reader before I pick the format.</p></div>
+<div class="point"><h3>Make the whole team sharper.</h3><p>I like working with writers and editors. The best edit makes the piece better and leaves it sounding like the person who wrote it.</p></div>
+<div class="point"><h3>Build a voice that travels.</h3><p>A brand voice is only useful if other people can write in it. I build it to still sound like you when I’m not at the keyboard.</p></div></div>
+</section>
+
+<section class="wrap" id="learning" aria-labelledby="b-demand">
+  <div class="sec-head"><h2 id="b-demand">Learning</h2></div>
+  <p class="small" style="margin-bottom:1rem">Recent courses and certificates, mostly on AI, data and delivery. Each one is listed on my LinkedIn profile.</p>
+  <div class="certs"><div class="cert-group"><h3>Generative AI</h3><ul role="list"><li>Genpact Genome BITS Wave, Generative AI (Intermediate), Dec 2024</li><li>Microsoft and LinkedIn, Build Your Generative AI Productivity Skills, Oct 2024</li><li>LinkedIn, How to Research and Write Using Generative AI Tools, Sep 2024</li><li>Microsoft and LinkedIn, Career Essentials in Generative AI, Aug 2024</li></ul></div>
+<div class="cert-group"><h3>Data and delivery</h3><ul role="list"><li>Microsoft and LinkedIn, Career Essentials in Data Analysis, Apr 2025</li><li>Atlassian, Agile Project Management Professional Certificate, Feb 2025</li></ul></div>
+<div class="cert-group"><h3>Marketing and people</h3><ul role="list"><li>SHRM, HR Guidelines Everyone Should Know, Feb 2025</li><li>Genpact Genome BITS Wave, Media, Publishing, Communications &amp; Entertainment (Proficient), Dec 2024</li><li>Google, Think Outside the Inbox: Email Marketing, May 2024</li><li>Google, From Likes to Leads: Interact with Customers Online, Apr 2024</li></ul></div></div>
+</section>
+
+<section class="wrap" id="education" aria-labelledby="b-net">
+  <div class="sec-head"><h2 id="b-net">Education and languages</h2></div>
+  <div class="edus"><article class="edu"><p class="edu-when">2010 – 2011</p><div><h3>Post Graduate Diploma, Journalism</h3><p class="edu-org">Express Institute of Media Studies</p><p>Winner of the Dean’s Prize.</p></div></article>
+<article class="edu"><p class="edu-when">2007</p><div><h3>Bachelor’s degree, Business Administration and Management</h3><p class="edu-org">Savitribai Phule Pune University</p></div></article>
+<article class="edu"><p class="edu-when">Languages</p><div><p>English, Hindi and Marathi, native or bilingual. Kannada, limited working.</p></div></article></div>
+</section>
+
+</main>
+
+<footer class="foot" id="contact"><div class="wrap">
+  <h2>Say hello</h2>
+  <p class="mailbig sel">mail.praj@gmail.com</p>
+  <p>For writing, editing, content strategy, or a conversation about what I’m building.</p>
+  <div class="actions">
+    <a class="btn" href="mailto:mail.praj@gmail.com">Email me</a>
+    <a class="btn btn--cyan" href="https://www.linkedin.com/in/prajakta-hebbar/">LinkedIn</a>
+    <a class="btn btn--pink" href="https://www.instagram.com/imsopraj/">Instagram @imsopraj</a>
+    <a class="btn btn--yellow" href="https://bibliospective.substack.com/">Substack</a>
+  </div>
+  <p class="onair">© Prajakta Hebbar. Last updated October 2026.</p>
+</div></footer>
+</body>
+</html>
